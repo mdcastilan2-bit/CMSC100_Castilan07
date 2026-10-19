@@ -1,0 +1,233 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #222222;
+}
+
+.page-header {
+    padding: 18px 24px;
+    border-bottom: 1px solid #dddddd;
+}
+
+.page-header h1 {
+    margin: 0;
+    font-size: 26px;
+}
+
+/* Three-column page layout */
+.page-layout {
+    display: grid;
+    grid-template-columns: 200px minmax(0, 1fr) 220px;
+    min-height: calc(100vh - 65px);
+}
+
+/* Left navigation */
+.side-menu {
+    padding: 20px 12px;
+    border-right: 1px solid #dddddd;
+}
+
+.menu-item {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 14px 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: transparent;
+    color: #333333;
+    text-align: left;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.menu-item:hover {
+    background-color: #eeeeee;
+}
+
+.menu-item.active {
+    background-color: #dce8ff;
+    color: #174ea6;
+}
+
+/* Main content */
+.main-content {
+    min-width: 0;
+    padding: 24px;
+}
+
+.main-content h2 {
+    margin-top: 0;
+}
+
+/* Food submission form */
+#food-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 600px;
+    margin-bottom: 28px;
+}
+
+#food-form label {
+    margin-top: 6px;
+    font-weight: bold;
+}
+
+#food-form input,
+#food-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #bbbbbb;
+    border-radius: 4px;
+    font: inherit;
+}
+
+#food-form textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+#food-form button,
+.food-card button {
+    padding: 10px 14px;
+    border: none;
+    border-radius: 4px;
+    background-color: #245bb5;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#food-form button {
+    align-self: flex-start;
+    margin-top: 8px;
+}
+
+#food-form button:hover,
+.food-card button:hover {
+    background-color: #17418a;
+}
+
+/* Food cards are arranged horizontally */
+#food-cards {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    overflow-x: auto;
+    padding: 4px 2px 16px;
+}
+
+.food-card {
+    flex: 0 0 220px;
+    padding: 12px;
+    border: 1px solid #dddddd;
+    border-radius: 6px;
+    background-color: #ffffff;
+    overflow-wrap: anywhere;
+}
+
+.food-image {
+    display: block;
+    width: 100%;
+    height: 140px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    object-fit: cover;
+    background-color: #eeeeee;
+}
+
+.food-card h3 {
+    margin: 8px 0;
+}
+
+.food-card p {
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+.food-card button {
+    margin-top: 8px;
+    background-color: #b3261e;
+}
+
+.food-card button:hover {
+    background-color: #861b16;
+}
+
+/* Right advertisement sidebar */
+.ad-sidebar {
+    padding: 20px 14px;
+    background-color: #eeeeee;
+}
+
+.ad-sidebar h2 {
+    margin-top: 0;
+    text-align: center;
+    font-size: 20px;
+}
+
+.ad-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 120px;
+    margin-bottom: 16px;
+    padding: 12px;
+    border: 1px dashed #aaaaaa;
+    background-color: #dddddd;
+    color: #555555;
+    text-align: center;
+}
+
+/* Adapt the layout for smaller screens */
+@media (max-width: 850px) {
+    .page-layout {
+        grid-template-columns: 160px minmax(0, 1fr);
+    }
+
+    .ad-sidebar {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .ad-sidebar h2 {
+        grid-column: 1 / -1;
+    }
+
+    .ad-placeholder {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 550px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .side-menu {
+        border-right: none;
+        border-bottom: 1px solid #dddddd;
+    }
+
+    .menu-item {
+        display: inline-block;
+        width: auto;
+        margin-right: 4px;
+    }
+
+    .main-content {
+        padding: 18px;
+    }
+
+    .ad-sidebar {
+        grid-template-columns: 1fr;
+    }
+}
