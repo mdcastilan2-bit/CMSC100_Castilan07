@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Favorite Food</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="form.js" defer></script>
+</head>
+<body>
+    <header class="page-header">
+        <h1>My Favorites</h1>
+    </header>
+
+    <div class="page-layout">
+        <nav class="side-menu">
+            <button class="menu-item active" type="button">
+                FAVORITE FOOD
+            </button>
+            <button class="menu-item" type="button">
+                FAVORITE SONGS
+            </button>
+            <button class="menu-item" type="button">
+                FAVORITE QUOTES
+            </button>
+        </nav>
+
+        <main class="main-content">
+            <h2>Favorite Food</h2>
+
+            <form id="food-form">
+                <label for="food-name">Food name</label>
+                <input
+                    type="text"
+                    id="food-name"
+                    placeholder="Enter food name"
+                    required
+                >
+
+                <label for="food-description">Description</label>
+                <textarea
+                    id="food-description"
+                    placeholder="Describe the food"
+                    required
+                ></textarea>
+
+                <label for="food-image">Image URL</label>
+                <input
+                    type="url"
+                    id="food-image"
+                    placeholder="https://example.com/food.jpg"
+                    required
+                >
+
+                <label for="food-rank">Rank (1 is highest)</label>
+                <input
+                    type="number"
+                    id="food-rank"
+                    min="1"
+                    step="1"
+                    placeholder="Enter rank"
+                    required
+                >
+
+                <button type="submit">Add Food</button>
+            </form>
+
+            <section id="food-cards" aria-label="Favorite food cards">
+            </section>
+        </main>
+
+        <aside class="ad-sidebar">
+            <h2>ADS</h2>
+
+            <div class="ad-placeholder">Advertisement 1</div>
+            <div class="ad-placeholder">Advertisement 2</div>
+            <div class="ad-placeholder">Advertisement 3</div>
+        </aside>
+    </div>
+</body>
+</html>
